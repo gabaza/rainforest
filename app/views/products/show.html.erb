@@ -19,6 +19,14 @@
           <button type ="button" <%= link_to 'Delete', review_path(review), method: :delete, data: {confirm: "Are you sure?" } %> </button>
       </p>
     <% end %>
-    
-  </ul>
+</ul>
+
+<form action="/products/new" method="post">
+  <div>
+    <label for="review">Review:</label>
+    <textarea id="review" name="user_message"></textarea>
+  </div>
+</form>
+
+
   </section>

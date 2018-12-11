@@ -1,0 +1,17 @@
+<h1>Display Products</h1>
+<section class="products"
+<% @products.each do |product| %>
+  <section class="product"
+  <p class="product-name"> <%= product.name %> </p>
+  <%= link_to("View Product", "/show") %>
+  <p class="description"> <%= product.description %> </p>
+  <p class="price"> <%= product.price_in_cents %> </p>
+  </section>
+<% end %>
+</section>
+
+<p>
+  <%= link_to 'New Product', new_product_path %>
+</p>
+
+<!-- !-- <h1>Display Events</h1> -->

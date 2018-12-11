@@ -10,7 +10,7 @@ def create
   if @product.save
     redirect_to product_path(@product)
   else
-    render :new 
+    render :new
   end
 end
 
@@ -25,7 +25,6 @@ end
 
 def edit
   @product = Product.find(params[:id])
-  @review = Review.find(params[:id])
 end
 
 def show

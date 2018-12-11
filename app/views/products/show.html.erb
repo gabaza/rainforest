@@ -1,0 +1,32 @@
+<section class="show-product">
+  <p> <%= @product.name %> </p>
+  <p> <%= @product.description %> </p>
+  <p> <%= @product.price_in_cents %> </p>
+  <p> <button type ="button"><%= link_to 'Edit', edit_product_path(@product) %> </button>
+      <button type ="button" <%= link_to 'Delete', product_path(@product), method: :delete, data: {confirm: "Are you sure?" } %> </button>
+  </p>
+
+
+<h2> Reviews </h2>
+
+<ul>
+    <% @reviews.each do |review| %>
+      <li>
+        <p>On <%= review.created_at %> <%= review.name %> said: </p>
+        <p> <%= review.text %> </p>
+      </li>
+      <p> <button type ="button"><%= link_to 'Edit', edit_review_path(review) %> </button>
+          <button type ="button" <%= link_to 'Delete', review_path(review), method: :delete, data: {confirm: "Are you sure?" } %> </button>
+      </p>
+    <% end %>
+</ul>
+
+<form action="/products/new" method="post">
+  <div>
+    <label for="review">Review:</label>
+    <textarea id="review" name="user_message"></textarea>
+  </div>
+</form>
+
+
+  </section>

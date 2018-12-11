@@ -11,3 +11,6 @@ Product.destroy_all
 product1 = Product.create(name: "Lighter", description: "Lights things on fire well!", price_in_cents: 99)
 product2 = Product.create(name: "Lighter2", description: "Lights things on fire badly!", price_in_cents: 97)
 product3 = Product.create(name: "Bong", description: "Big bong now legally compatible with marijuana", price_in_cents: 490)
+
+Review.destroy_all
+review1 = Review.create!(name: "Gabbi", text: "This is a test", product_id: product1.id )

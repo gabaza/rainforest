@@ -3,7 +3,7 @@
 <% @products.each do |product| %>
   <section class="product"
   <p class="product-name"> <%= product.name %> </p>
-  <%= link_to("View Product", "/show") %>
+  <%= link_to("View Product", product_path(product)) %>
   <p class="description"> <%= product.description %> </p>
   <p class="price"> <%= product.price_in_cents %> </p>
   </section>

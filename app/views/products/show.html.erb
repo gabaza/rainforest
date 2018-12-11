@@ -1,0 +1,10 @@
+<section class="show-product">
+  <p> <%= @product.name %> </p>
+  <p> <%= @product.description %> </p>
+  <p> <%= @product.price_in_cents %> </p>
+  <p> <button type ="button"><%= link_to 'Edit', edit_product_path(@product) %> </button>
+      <button type ="button" <%= link_to 'Delete', product_path(@product), method: :delete, data: {confirm: "Are you sure?" } %> </button>
+  </p>
+</section>
+
+<h2> Reviews </h2>

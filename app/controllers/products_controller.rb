@@ -47,8 +47,11 @@ end
 
 end
 
-def delete
-  @review = Review.delete(params[:id])
+def destroy
+  @product = Product.find(params[:id])
+  @product.destroy
+  redirect_to "/products", notice: "Product deleted"
+
 end
 
 

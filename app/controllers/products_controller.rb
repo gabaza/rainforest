@@ -6,10 +6,11 @@ def create
   @product.name = params[:product][:name]
   @product.description = params[:product][:description]
   @product.price_in_cents = params[:product][:price_in_cents]
+
   if @product.save
     redirect_to product_path(@product)
   else
-    render :new
+    render :new 
   end
 end
 

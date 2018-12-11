@@ -15,18 +15,18 @@
         <p>On <%= review.created_at %> <%= review.name %> said: </p>
         <p> <%= review.text %> </p>
       </li>
-      <p> <button type ="button"><%= link_to 'Edit', edit_review_path(review) %> </button>
-          <button type ="button" <%= link_to 'Delete', review_path(review), method: :delete, data: {confirm: "Are you sure?" } %> </button>
+      <p> <button type ="button"><%= link_to 'Edit', edit_product_review_path(@product, review) %> </button>
+          <button type ="button" <%= link_to 'Delete', product_review_path(@product, review), method: :delete, data: {confirm: "Are you sure?" } %> </button>
       </p>
     <% end %>
 </ul>
 
-<form action="/products/new" method="post">
-  <div>
-    <label for="review">Review:</label>
-    <textarea id="review" name="user_message"></textarea>
-  </div>
-</form>
+<%= form_for [@product, @review] do |f| %>
+ <%= f.label :name %>:
+ <%= f.text_field :name %><br />
 
+ <%= f.label :text%>:
+ <%= f.text_field :text %><br />
 
-  </section>
+ <%= f.submit %>
+<% end %>

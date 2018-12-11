@@ -2,14 +2,12 @@ class ProductsController < ApplicationController
 
 
 def create
-@product = Product.new
-@product.name = params[:product][:name]
-@product.description = params[:product][:description]
-@product.price_in_cents = params[:product][:price_in_cents]
+  @product = Product.new
+  @product.name = params[:product][:name]
+  @product.description = params[:product][:description]
+  @product.price_in_cents = params[:product][:price_in_cents]
 
-@review = Review.new
-@review.name = params[:product][:name]
-@review.text
+
 end
 
 def index
@@ -17,8 +15,7 @@ def index
 end
 
 def new
-@product = Product.new
-@review = Review.new
+  @product = Product.new
 end
 
 def edit
@@ -29,6 +26,7 @@ end
 def show
   @product = Product.find(params[:id])
   @reviews = @product.reviews
+  @review = Review.new
 end
 
 def update
